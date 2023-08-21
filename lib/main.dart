@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './styles/global_style.dart';
+import 'widgets/floating_buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,80 +56,50 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primary['background_color'],
-        centerTitle: true,
-        title: Text(
-          widget.title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: primary['color'],
+        appBar: AppBar(
+          backgroundColor: primary['background_color'],
+          centerTitle: true,
+          title: Text(
+            widget.title,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: primary['color'],
+            ),
           ),
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '$_counter',
-              style: TextStyle(
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  color: primary['background_color']),
-            ),
-            separator(height: 16),
-            Text(
-              'Este é um contador simples,',
-              style: TextStyle(
-                fontSize: 16,
-                color: primary['text_color'],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                '$_counter',
+                style: TextStyle(
+                    fontSize: 80,
+                    fontWeight: FontWeight.bold,
+                    color: primary['background_color']),
               ),
-            ),
-            Text(
-              'Você pode alterá-lo utilizando os botões abaixo.',
-              style: TextStyle(
-                fontSize: 16,
-                color: primary['text_color'],
+              separator(height: 16),
+              Text(
+                'Este é um contador simples,',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: primary['text_color'],
+                ),
               ),
-            ),
-          ],
+              Text(
+                'Você pode alterá-lo utilizando os botões abaixo.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: primary['text_color'],
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: Container(
-        margin: const EdgeInsets.only(left: 40),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            primaryButton(
-              tooltip: '-1',
-              action: _decrementCounter,
-              child: Icon(
-                Icons.remove,
-                color: primary['color'],
-              ),
-            ),
-            separator(width: 8),
-            primaryButton(
-              tooltip: 'Resetar Contador',
-              action: _resetCounter,
-              child: Icon(
-                Icons.restore,
-                color: primary['color'],
-              ),
-            ),
-            separator(width: 8),
-            primaryButton(
-              tooltip: '+1',
-              action: _incrementCounter,
-              child: Icon(
-                Icons.add,
-                color: primary['color'],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+        floatingActionButton: FloatingButtons(
+          decrementCounter: _decrementCounter,
+          resetCounter: _resetCounter,
+          incrementCounter: _incrementCounter,
+        ));
   }
 }
