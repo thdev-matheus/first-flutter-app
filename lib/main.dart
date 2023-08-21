@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './styles/global_style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Contador'),
@@ -52,22 +52,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  Widget separator({double? width, double? height}) => SizedBox(
-        width: width,
-        height: height,
-      );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[800],
+        backgroundColor: primary['background_color'],
         centerTitle: true,
         title: Text(
           widget.title,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: primary['color'],
           ),
         ),
       ),
@@ -80,21 +75,21 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(
                   fontSize: 80,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green[800]),
+                  color: primary['background_color']),
             ),
             separator(height: 16),
-            const Text(
+            Text(
               'Este é um contador simples,',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.black54,
+                color: primary['text_color'],
               ),
             ),
-            const Text(
+            Text(
               'Você pode alterá-lo utilizando os botões abaixo.',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.black54,
+                color: primary['text_color'],
               ),
             ),
           ],
@@ -108,12 +103,12 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               tooltip: '-1',
               elevation: 2,
-              backgroundColor: Colors.green[800],
+              backgroundColor: primary['background_color'],
               onPressed: _decrementCounter,
               shape: const CircleBorder(),
-              child: const Icon(
+              child: Icon(
                 Icons.remove,
-                color: Colors.white,
+                color: primary['color'],
               ),
             ),
             separator(width: 8),
@@ -121,23 +116,23 @@ class _MyHomePageState extends State<MyHomePage> {
               tooltip: 'Resetar Contador',
               elevation: 2,
               onPressed: _resetCounter,
-              backgroundColor: Colors.green[800],
+              backgroundColor: primary['background_color'],
               shape: const CircleBorder(),
-              child: const Icon(
+              child: Icon(
                 Icons.restore,
-                color: Colors.white,
+                color: primary['color'],
               ),
             ),
             separator(width: 8),
             FloatingActionButton(
               elevation: 2,
               onPressed: _incrementCounter,
-              backgroundColor: Colors.green[800],
+              backgroundColor: primary['background_color'],
               tooltip: '+1',
               shape: const CircleBorder(),
-              child: const Icon(
+              child: Icon(
                 Icons.add,
-                color: Colors.white,
+                color: primary['color'],
               ),
             ),
           ],
