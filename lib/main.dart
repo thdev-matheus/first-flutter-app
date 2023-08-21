@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Theus App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Theus App'),
+      home: const MyHomePage(title: 'Contador'),
     );
   }
 }
@@ -57,8 +56,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: Colors.blueGrey,
+        centerTitle: true,
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Center(
         child: Column(
@@ -80,22 +86,30 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FloatingActionButton(
+              tooltip: "-1",
+              elevation: 2,
               onPressed: _decrementCounter,
+              shape: const CircleBorder(),
               child: const Icon(Icons.remove),
             ),
             const SizedBox(
               width: 8,
             ),
             FloatingActionButton(
+              tooltip: "Resetar Contador",
+              elevation: 2,
               onPressed: _resetCounter,
+              shape: const CircleBorder(),
               child: const Icon(Icons.restore),
             ),
             const SizedBox(
               width: 8,
             ),
             FloatingActionButton(
+              elevation: 2,
               onPressed: _incrementCounter,
-              tooltip: 'Increment',
+              tooltip: '+1',
+              shape: const CircleBorder(),
               child: const Icon(Icons.add),
             ),
           ],
