@@ -1,6 +1,5 @@
 # My First Flutter App
 
-<a href="" download>link para o apk</a>
 
 <div style="display: inline_block"><br/>
     <img align="center" alt="git" src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
@@ -12,6 +11,11 @@
     <img align="center" alt="ios" src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white"/>
     <img align="center" alt="kali" src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white"/>
 </div>
+
+<br/>
+
+Primeira aplicação feita no bootcamp de flutter da DIO.
+
 <br/>
 <br/>
 <div style="display: inline-block">
@@ -24,12 +28,9 @@
 
 > A primeira aplicação a gente nunca esquece.
 
-<br/>
+Logo abaixo você terá um link para download do APK e com isso poderá instalar no seu android. Se você usa um dispositivo IOS, não será possível instalar de forma manual, sendo assim necessário você clonar o repositório e executar as etapas de instalação através de um dispositivo MacOS.
 
-Primeira aplicação feita no bootcamp de flutter da DIO.
-
-
-<br/>
+[Link para o APK](./download/app-release.apk)
 
 ## Criador do projeto
 
