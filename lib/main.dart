@@ -100,36 +100,27 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FloatingActionButton(
+            primaryButton(
               tooltip: '-1',
-              elevation: 2,
-              backgroundColor: primary['background_color'],
-              onPressed: _decrementCounter,
-              shape: const CircleBorder(),
+              action: _decrementCounter,
               child: Icon(
                 Icons.remove,
                 color: primary['color'],
               ),
             ),
             separator(width: 8),
-            FloatingActionButton(
+            primaryButton(
               tooltip: 'Resetar Contador',
-              elevation: 2,
-              onPressed: _resetCounter,
-              backgroundColor: primary['background_color'],
-              shape: const CircleBorder(),
+              action: _resetCounter,
               child: Icon(
                 Icons.restore,
                 color: primary['color'],
               ),
             ),
             separator(width: 8),
-            FloatingActionButton(
-              elevation: 2,
-              onPressed: _incrementCounter,
-              backgroundColor: primary['background_color'],
+            primaryButton(
               tooltip: '+1',
-              shape: const CircleBorder(),
+              action: _incrementCounter,
               child: Icon(
                 Icons.add,
                 color: primary['color'],
