@@ -9,9 +9,9 @@ class FloatingButtons extends StatelessWidget {
     required this.incrementCounter,
   });
 
-  final void Function() decrementCounter;
-  final void Function() resetCounter;
-  final void Function() incrementCounter;
+  final Future<void> Function() decrementCounter;
+  final Future<void> Function() resetCounter;
+  final Future<void> Function() incrementCounter;
 
   @override
   Widget build(BuildContext context) {

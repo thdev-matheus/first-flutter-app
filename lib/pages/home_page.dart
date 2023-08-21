@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appbar.dart';
 import '../widgets/body.dart';
@@ -15,24 +16,38 @@ class Home extends StatefulWidget {
 class _MyHomePageState extends State<Home> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  final player = AudioPlayer();
+
+  Future<void> play({required String source}) async {
+    await player.setSource(AssetSource(source));
+    await player.resume();
+  }
+
+  Future<void> _incrementCounter() async {
+    await play(source: 'sounds/click.mp3');
+
     setState(() {
       _counter++;
     });
   }
 
-  void _decrementCounter() {
-    setState(() {
-      if (_counter > 0) {
+  Future<void> _decrementCounter() async {
+    if (_counter > 0) {
+      await play(source: 'sounds/click.mp3');
+      setState(() {
         _counter--;
-      }
-    });
+      });
+    }
   }
 
-  void _resetCounter() {
-    setState(() {
-      _counter = 0;
-    });
+  Future<void> _resetCounter() async {
+    if (_counter != 0) {
+      await play(source: 'sounds/reset_click.mp3');
+
+      setState(() {
+        _counter = 0;
+      });
+    }
   }
 
   @override
