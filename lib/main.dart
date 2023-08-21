@@ -82,18 +82,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.bold,
                   color: Colors.green[800]),
             ),
-            separator(height: 32),
+            separator(height: 16),
             const Text(
               'Este é um contador simples,',
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 color: Colors.black54,
               ),
             ),
             const Text(
               'Você pode alterá-lo utilizando os botões abaixo.',
               style: TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 color: Colors.black54,
               ),
             ),
@@ -108,29 +108,37 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               tooltip: '-1',
               elevation: 2,
+              backgroundColor: Colors.green[800],
               onPressed: _decrementCounter,
               shape: const CircleBorder(),
-              child: const Icon(Icons.remove),
+              child: const Icon(
+                Icons.remove,
+                color: Colors.white,
+              ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            separator(width: 8),
             FloatingActionButton(
               tooltip: 'Resetar Contador',
               elevation: 2,
               onPressed: _resetCounter,
+              backgroundColor: Colors.green[800],
               shape: const CircleBorder(),
-              child: const Icon(Icons.restore),
+              child: const Icon(
+                Icons.restore,
+                color: Colors.white,
+              ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            separator(width: 8),
             FloatingActionButton(
               elevation: 2,
               onPressed: _incrementCounter,
+              backgroundColor: Colors.green[800],
               tooltip: '+1',
               shape: const CircleBorder(),
-              child: const Icon(Icons.add),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
