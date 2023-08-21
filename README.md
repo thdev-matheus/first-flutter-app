@@ -1,6 +1,7 @@
 # My First Flutter App
 
-<a href="" download>link para o apk</a>
+<a href="/theus-dio-projetos/first-flutter-app/raw/main/download/app-release.apk" download="true">link para o apk</a>
+
 
 <div style="display: inline_block"><br/>
     <img align="center" alt="git" src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
