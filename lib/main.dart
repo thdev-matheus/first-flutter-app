@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/widgets/body.dart';
 import 'package:flutter/material.dart';
 import './styles/global_style.dart';
 import 'widgets/floating_buttons.dart';
@@ -67,35 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                '$_counter',
-                style: TextStyle(
-                    fontSize: 80,
-                    fontWeight: FontWeight.bold,
-                    color: primary['background_color']),
-              ),
-              separator(height: 16),
-              Text(
-                'Este é um contador simples,',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: primary['text_color'],
-                ),
-              ),
-              Text(
-                'Você pode alterá-lo utilizando os botões abaixo.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: primary['text_color'],
-                ),
-              ),
-            ],
-          ),
-        ),
+        body: Body(counter: _counter),
         floatingActionButton: FloatingButtons(
           decrementCounter: _decrementCounter,
           resetCounter: _resetCounter,
