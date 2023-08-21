@@ -1,6 +1,6 @@
-import 'package:first_flutter_app/widgets/body.dart';
 import 'package:flutter/material.dart';
-import './styles/global_style.dart';
+import 'widgets/appbar.dart';
+import 'widgets/body.dart';
 import 'widgets/floating_buttons.dart';
 
 void main() {
@@ -57,17 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: primary['background_color'],
-          centerTitle: true,
-          title: Text(
-            widget.title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: primary['color'],
-            ),
-          ),
-        ),
+        appBar: bar(title: widget.title),
         body: Body(counter: _counter),
         floatingActionButton: FloatingButtons(
           decrementCounter: _decrementCounter,
