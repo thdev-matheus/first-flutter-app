@@ -52,11 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Widget separator({double? width, double? height}) => SizedBox(
+        width: width,
+        height: height,
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.green[800],
         centerTitle: true,
         title: Text(
           widget.title,
@@ -70,12 +75,27 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(
+                  fontSize: 80,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[800]),
+            ),
+            separator(height: 32),
+            const Text(
+              'Este é um contador simples,',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.black54,
+              ),
+            ),
+            const Text(
+              'Você pode alterá-lo utilizando os botões abaixo.',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.black54,
+              ),
             ),
           ],
         ),
@@ -86,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FloatingActionButton(
-              tooltip: "-1",
+              tooltip: '-1',
               elevation: 2,
               onPressed: _decrementCounter,
               shape: const CircleBorder(),
@@ -96,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 8,
             ),
             FloatingActionButton(
-              tooltip: "Resetar Contador",
+              tooltip: 'Resetar Contador',
               elevation: 2,
               onPressed: _resetCounter,
               shape: const CircleBorder(),
