@@ -1,6 +1,6 @@
 # My First Flutter App
 
-<a href="/theus-dio-projetos/first-flutter-app/raw/main/download/app-release.apk" download="true">link para o apk</a>
+<a href="./download/app-release.apk" download="true">link para o apk</a>
 
 
 <div style="display: inline_block"><br/>
